@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#202326">
+  <meta name="description" content="Bonafide Jaya (BONJA), bengkel las di Surakarta sejak 2005. Pembuatan pagar, pintu, tangga, kanopi, dan pekerjaan besi untuk Solo Raya. Harga mulai Rp250.000/m².">
+  <title>Bonafide Jaya — Bengkel Las Surakarta Sejak 2005</title>
+  <link rel="icon" href="assets/logo-bonafide-jaya.png" type="image/png">
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f7f5f0;
+      --surface: #eceae4;
+      --white: #fffefa;
+      --ink: #202326;
+      --muted: #555b5d;
+      --subtle: #747977;
+      --line: #d5d3cd;
+      --accent: #e6a34a;
+      --accent-ink: #241b11;
+      --content: 1264px;
+      --ease: cubic-bezier(.22, 1, .36, 1);
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    img, video { display: block; max-width: 100%; }
+    a { color: inherit; }
+    a:focus-visible, button:focus-visible { outline: 3px solid #9a5b12; outline-offset: 3px; }
+    .wrap { width: min(var(--content), calc(100% - 64px)); margin-inline: auto; }
+    .skip-link { position: absolute; z-index: 100; top: 8px; left: 8px; padding: 12px 16px; background: var(--white); transform: translateY(-160%); }
+    .skip-link:focus { transform: translateY(0); }
+
+    .site-header { position: sticky; top: 0; z-index: 20; background: var(--paper); border-bottom: 1px solid var(--line); }
+    .nav { min-height: 82px; display: flex; align-items: center; justify-content: space-between; gap: 28px; }
+    .brand { min-width: 230px; display: inline-flex; align-items: center; gap: 12px; text-decoration: none; }
+    .brand img { width: 56px; height: 56px; object-fit: contain; }
+    .brand-name { display: block; font-size: 16px; line-height: 1.2; font-weight: 700; letter-spacing: .04em; }
+    .brand-note { display: block; margin-top: 3px; color: var(--muted); font-size: 10px; line-height: 1.3; letter-spacing: .1em; }
+    .nav-links { display: flex; align-items: center; gap: 30px; margin: 0; padding: 0; list-style: none; }
+    .nav-links a { text-decoration: none; font-size: 14px; font-weight: 500; }
+    .nav-links a:hover { text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: 6px; }
+    .nav-cta, .button { min-height: 48px; display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 12px 20px; border: 1px solid transparent; border-radius: 6px; background: var(--accent); color: var(--accent-ink); font: inherit; font-size: 14px; font-weight: 700; text-decoration: none; transition: background-color 160ms var(--ease), border-color 160ms var(--ease), transform 160ms var(--ease); }
+    .nav-cta:hover, .button:hover { background: #efb765; }
+    .button:active, .nav-cta:active { transform: translateY(1px); }
+    .button-secondary { background: transparent; border-color: #9ca09f; color: var(--ink); }
+    .button-secondary:hover { background: rgba(255,255,255,.1); border-color: var(--paper); }
+    .hero .button-secondary { border-color: #d4d3ce; color: var(--paper); }
+    .hero .button-secondary:hover { background: var(--paper); border-color: var(--paper); color: var(--ink); }
+    .menu-toggle { display: none; width: 44px; height: 44px; place-items: center; padding: 0; border: 1px solid var(--line); border-radius: 6px; background: transparent; color: var(--ink); cursor: pointer; }
+    .menu-toggle svg { width: 22px; height: 22px; }
+
+    .hero { min-height: 630px; display: grid; grid-template-columns: minmax(0, .96fr) minmax(0, 1.04fr); align-items: center; gap: 52px; padding-block: 60px 68px; background: var(--ink); color: var(--paper); }
+    .hero-inner { width: min(var(--content), calc(100% - 64px)); margin-inline: auto; display: contents; }
+    .hero-copy { width: min(590px, 100%); margin-left: max(32px, calc((100vw - var(--content)) / 2)); padding-block: 20px; }
+    .eyebrow { margin: 0 0 18px; color: var(--accent); font-size: 12px; font-weight: 600; letter-spacing: .13em; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { max-width: 590px; margin-bottom: 20px; font-size: clamp(44px, 5.2vw, 68px); font-weight: 600; line-height: 1.04; letter-spacing: -.04em; }
+    .hero-description { max-width: 490px; margin-bottom: 26px; color: #d2d2cf; font-size: 18px; line-height: 1.55; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .hero-proof { display: flex; flex-wrap: wrap; gap: 10px 22px; margin: 30px 0 0; color: #c4c5c1; font-size: 13px; }
+    .hero-proof span + span::before { content: ""; display: inline-block; width: 4px; height: 4px; margin: 0 12px 2px 0; border-radius: 50%; background: var(--accent); }
+    .hero-image { width: 100%; height: 500px; object-fit: cover; object-position: 48% center; }
+    .section { padding-block: 104px; }
+    .section-heading { max-width: 720px; margin-bottom: 48px; }
+    .section-heading .eyebrow, .about .eyebrow, .contact .eyebrow { color: #8b561d; }
+    .section-heading h2, .about h2, .contact h2 { margin-bottom: 12px; font-size: clamp(32px, 3.8vw, 46px); font-weight: 550; line-height: 1.12; letter-spacing: -.035em; }
+    .section-heading p, .about-copy { margin-bottom: 0; color: var(--muted); font-size: 17px; }
+
+    .about { display: grid; grid-template-columns: .82fr 1fr; gap: 90px; align-items: start; padding-block: 92px 100px; }
+    .about h2 { max-width: 440px; }
+    .about-copy { max-width: 660px; padding-top: 6px; line-height: 1.7; }
+    .about-facts { display: flex; gap: 36px; margin-top: 26px; padding-top: 20px; border-top: 1px solid var(--line); }
+    .fact strong { display: block; font-size: 25px; font-weight: 600; line-height: 1.2; }
+    .fact span { color: var(--muted); font-size: 13px; }
+
+    .services { background: var(--surface); }
+    .service-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid #c9c8c2; }
+    .service-item { min-height: 155px; padding: 26px 28px 24px 0; border-bottom: 1px solid #c9c8c2; }
+    .service-item:nth-child(3n + 2), .service-item:nth-child(3n) { padding-left: 28px; border-left: 1px solid #c9c8c2; }
+    .service-number { display: block; margin-bottom: 14px; color: #8b561d; font-size: 12px; font-weight: 600; letter-spacing: .08em; }
+    .service-item h3 { margin-bottom: 6px; font-size: 19px; font-weight: 550; line-height: 1.3; }
+    .service-item p { max-width: 34ch; margin: 0; color: var(--muted); font-size: 14px; line-height: 1.55; }
+
+    .projects { padding-bottom: 112px; }
+    .project-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px 24px; }
+    .project { margin: 0; }
+    .project img, .project video { width: 100%; height: 280px; object-fit: cover; background: #d7d5cf; }
+    .project figcaption { padding-top: 12px; font-size: 15px; font-weight: 550; }
+    .project figcaption span { display: block; margin-top: 2px; color: var(--muted); font-size: 13px; font-weight: 400; }
+    .project-video { grid-column: span 2; }
+    .project-video video { height: 360px; }
+    .video-caption { display: flex; justify-content: space-between; gap: 20px; align-items: baseline; }
+
+    .process { background: var(--ink); color: var(--paper); }
+    .process-layout { display: grid; grid-template-columns: .82fr 1fr; gap: 90px; }
+    .process .eyebrow { color: var(--accent); }
+    .process h2 { max-width: 440px; margin: 0; font-size: clamp(36px, 4vw, 48px); font-weight: 550; line-height: 1.1; letter-spacing: -.035em; }
+    .steps { margin: 0; padding: 0; list-style: none; counter-reset: workstep; }
+    .steps li { display: grid; grid-template-columns: 48px 1fr; gap: 16px; padding: 22px 0; border-top: 1px solid rgba(247,245,240,.2); counter-increment: workstep; }
+    .steps li::before { content: "0" counter(workstep); color: var(--accent); font-size: 13px; font-weight: 600; letter-spacing: .08em; }
+    .steps h3 { margin: 0 0 4px; font-size: 18px; font-weight: 550; }
+    .steps p { max-width: 52ch; margin: 0; color: #c5c7c4; font-size: 14px; }
+
+    .price-band { display: grid; grid-template-columns: 1.3fr .7fr; align-items: center; gap: 48px; padding-block: 88px; }
+    .price-band .eyebrow { color: #8b561d; }
+    .price-band h2 { margin: 0 0 10px; font-size: 25px; font-weight: 500; }
+    .price-value { margin: 0; font-size: clamp(44px, 6vw, 64px); font-weight: 600; letter-spacing: -.04em; line-height: 1.1; }
+    .price-note { margin: 12px 0 0; color: var(--muted); font-size: 14px; }
+    .service-area { padding-left: 36px; border-left: 1px solid var(--line); }
+    .service-area strong { display: block; margin-bottom: 6px; font-size: 18px; font-weight: 550; }
+    .service-area p { margin: 0; color: var(--muted); }
+
+    .contact { background: var(--surface); }
+    .contact-layout { display: grid; grid-template-columns: .9fr 1.1fr; gap: 80px; }
+    .contact h2 { max-width: 460px; }
+    .contact-intro { max-width: 420px; color: var(--muted); }
+    .contact-cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    .contact-card { padding: 22px; background: var(--paper); border: 1px solid #d8d6d0; }
+    .contact-card h3 { margin-bottom: 10px; font-size: 15px; font-weight: 600; }
+    .contact-card p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.6; }
+    .contact-card a { text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .contact-meta { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 24px; }
+    .contact-meta h3 { margin: 0 0 6px; font-size: 14px; font-weight: 600; }
+    .contact-meta p { margin: 0; color: var(--muted); font-size: 14px; }
+    .social-links { display: flex; flex-wrap: wrap; gap: 8px 16px; }
+    .contact-actions { display: flex; gap: 12px; margin-top: 28px; }
+    .contact-actions .button-secondary { border-color: #a8aaa6; }
+    .site-footer { padding-block: 26px; background: var(--ink); color: #d2d2cf; }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; font-size: 12px; }
+    .footer-inner p { margin: 0; }
+    .footer-inner a { text-decoration: none; }
+
+    @media (max-width: 900px) {
+      .wrap { width: min(var(--content), calc(100% - 48px)); }
+      .nav { min-height: 74px; }
+      .brand { min-width: 0; }
+      .brand img { width: 48px; height: 48px; }
+      .menu-toggle { display: grid; margin-left: auto; }
+      .nav-cta { min-height: 44px; padding: 10px 14px; }
+      .nav-links { position: absolute; top: calc(100% + 1px); left: 0; right: 0; display: none; flex-direction: column; align-items: stretch; gap: 0; padding: 8px 24px 16px; background: var(--paper); border-bottom: 1px solid var(--line); }
+      .nav-links.is-open { display: flex; }
+      .nav-links a { display: block; padding: 12px 0; }
+      .hero { min-height: 0; grid-template-columns: 1fr 1fr; gap: 28px; padding-block: 52px; }
+      .hero-copy { margin-left: max(24px, calc((100vw - var(--content)) / 2)); }
+      .hero-image { height: 420px; }
+      .about, .process-layout { grid-template-columns: .8fr 1fr; gap: 48px; }
+      .contact-layout { grid-template-columns: 1fr; gap: 36px; }
+      .service-item { min-height: 165px; }
+    }
+    @media (max-width: 640px) {
+      html { scroll-padding-top: 74px; }
+      .wrap { width: calc(100% - 40px); }
+      .nav { min-height: 70px; gap: 10px; }
+      .brand { gap: 8px; }
+      .brand img { width: 42px; height: 42px; }
+      .brand-name { font-size: 14px; }
+      .brand-note { font-size: 9px; }
+      .nav-cta { min-height: 42px; padding: 9px 11px; font-size: 12px; }
+      .menu-toggle { width: 42px; height: 42px; }
+      .nav-links { padding-inline: 20px; }
+      .hero { display: flex; flex-direction: column; align-items: stretch; gap: 28px; padding: 44px 0 0; }
+      .hero-copy { width: calc(100% - 40px); margin: 0 auto; padding: 0; }
+      .eyebrow { margin-bottom: 14px; font-size: 11px; }
+      h1 { max-width: 480px; margin-bottom: 16px; font-size: clamp(40px, 11vw, 52px); line-height: 1.04; }
+      .hero-description { max-width: 45ch; margin-bottom: 22px; font-size: 16px; }
+      .hero-actions { gap: 10px; }
+      .hero-actions .button { flex: 1 1 auto; padding-inline: 15px; }
+      .hero-proof { gap: 8px 14px; margin-top: 22px; font-size: 12px; }
+      .hero-proof span + span::before { margin-right: 8px; }
+      .hero-image { height: 300px; object-position: center 48%; }
+      .section { padding-block: 76px; }
+      .about { display: block; padding-block: 72px; }
+      .about h2 { max-width: 390px; margin-bottom: 20px; font-size: 36px; }
+      .about-copy { font-size: 16px; }
+      .about-facts { gap: 28px; }
+      .fact strong { font-size: 22px; }
+      .section-heading { margin-bottom: 32px; }
+      .section-heading h2, .contact h2 { font-size: 34px; }
+      .section-heading p { font-size: 16px; }
+      .service-list { grid-template-columns: 1fr; }
+      .service-item, .service-item:nth-child(3n + 2), .service-item:nth-child(3n) { min-height: 0; padding: 20px 0; border-left: 0; }
+      .service-number { margin-bottom: 8px; }
+      .service-item h3 { font-size: 18px; }
+      .project-grid { grid-template-columns: 1fr 1fr; gap: 24px 12px; }
+      .project img, .project video { height: 190px; }
+      .project-video { grid-column: 1 / -1; }
+      .project-video video { height: auto; aspect-ratio: 16 / 9; }
+      .project figcaption { padding-top: 8px; font-size: 14px; }
+      .project figcaption span { font-size: 12px; }
+      .video-caption { display: block; }
+      .process-layout { display: block; }
+      .process h2 { margin-bottom: 30px; font-size: 38px; }
+      .steps li { grid-template-columns: 36px 1fr; gap: 10px; padding: 18px 0; }
+      .price-band { display: block; padding-block: 72px; }
+      .price-band h2 { font-size: 22px; }
+      .price-value { font-size: clamp(42px, 12vw, 56px); }
+      .service-area { margin-top: 28px; padding: 20px 0 0; border-top: 1px solid var(--line); border-left: 0; }
+      .contact-layout { gap: 24px; }
+      .contact-cards { grid-template-columns: 1fr; }
+      .contact-card { padding: 18px; }
+      .contact-meta { grid-template-columns: 1fr; gap: 18px; }
+      .contact-actions { flex-wrap: wrap; }
+      .contact-actions .button { flex: 1 1 160px; }
+      .footer-inner { align-items: flex-start; flex-direction: column; gap: 8px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Lewati ke konten utama</a>
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="#atas" aria-label="Bonafide Jaya, kembali ke halaman atas">
+        <img src="assets/logo-bonafide-jaya.png" width="56" height="56" alt="">
+        <span><span class="brand-name">BONAFIDE JAYA</span><span class="brand-note">BENGKEL LAS · SURAKARTA</span></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Buka navigasi" aria-expanded="false" aria-controls="nav-links">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <nav aria-label="Navigasi utama">
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#layanan">Layanan</a></li>
+          <li><a href="#proyek">Proyek</a></li>
+          <li><a href="#proses">Proses</a></li>
+          <li><a href="#kontak">Kontak</a></li>
+        </ul>
+      </nav>
+      <a class="nav-cta" href="https://wa.me/6285728133420?text=Halo%20Bonafide%20Jaya%2C%20saya%20ingin%20bertanya%20tentang%20layanan" target="_blank" rel="noopener noreferrer">WhatsApp <span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="atas" aria-labelledby="hero-title">
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow">BENGKEL LAS BONAFIDE JAYA · SOLO RAYA</p>
+          <h1 id="hero-title">Besi dibentuk untuk rumah yang kokoh</h1>
+          <p class="hero-description">Pagar, pintu, tangga, dan kanopi dibuat sesuai kebutuhan bangunan Anda.</p>
+          <div class="hero-actions">
+            <a class="button" href="https://wa.me/6285728133420?text=Halo%20Bonafide%20Jaya%2C%20saya%20ingin%20minta%20penawaran" target="_blank" rel="noopener noreferrer">Minta penawaran <span aria-hidden="true">→</span></a>
+            <a class="button button-secondary" href="#proyek">Lihat hasil kerja</a>
+          </div>
+          <p class="hero-proof"><span>Sejak 2005</span><span>Surakarta</span><span>Melayani Solo Raya</span></p>
+        </div>
+        <img class="hero-image" src="assets/gerbang.jpeg" width="1200" height="1600" fetchpriority="high" alt="Pintu pagar besi hasil pekerjaan Bonafide Jaya">
+      </div>
+    </section>
+
+    <section class="about wrap section" aria-labelledby="about-title">
+      <div><p class="eyebrow">TENTANG BONJA</p><h2 id="about-title">Kerja rapi. Hasil siap dipakai.</h2></div>
+      <div class="about-copy">
+        <p>Bonafide Jaya melayani pembuatan dan pemasangan kebutuhan besi untuk rumah maupun usaha. Berpengalaman sejak 2005, kami mengerjakan pesanan di Surakarta dan wilayah Solo Raya.</p>
+        <div class="about-facts" aria-label="Informasi usaha"><div class="fact"><strong>2005</strong><span>Tahun berdiri</span></div><div class="fact"><strong>Solo Raya</strong><span>Cakupan layanan</span></div></div>
+      </div>
+    </section>
+
+    <section class="services section" id="layanan" aria-labelledby="services-title">
+      <div class="wrap">
+        <div class="section-heading"><p class="eyebrow">LAYANAN</p><h2 id="services-title">Dari rangka sampai detail akhir</h2><p>Pekerjaan besi yang menyesuaikan ruang dan kebutuhan Anda.</p></div>
+        <div class="service-list">
+          <article class="service-item"><span class="service-number">01</span><h3>Pagar &amp; tralis</h3><p>Pagar minimalis, tempa, dan laser cutting.</p></article>
+          <article class="service-item"><span class="service-number">02</span><h3>Pintu &amp; rolling door</h3><p>Pintu lipat, rolling door, harmonika, folding gate, sliding, swing, dan tikung.</p></article>
+          <article class="service-item"><span class="service-number">03</span><h3>Tangga</h3><p>Tangga putar, trap, monyet, dan lipat.</p></article>
+          <article class="service-item"><span class="service-number">04</span><h3>Kanopi</h3><p>Kanopi galvalum, fiber, dan UPVC.</p></article>
+          <article class="service-item"><span class="service-number">05</span><h3>Container booth</h3><p>Pembuatan booth sesuai kebutuhan usaha.</p></article>
+          <article class="service-item"><span class="service-number">06</span><h3>Pekerjaan lainnya</h3><p>Jemuran dan kebutuhan besi custom lainnya.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="projects wrap section" id="proyek" aria-labelledby="projects-title">
+      <div class="section-heading"><p class="eyebrow">PORTOFOLIO</p><h2 id="projects-title">Beberapa hasil pekerjaan</h2><p>Dokumentasi proyek dan proses pengerjaan Bonafide Jaya.</p></div>
+      <div class="project-grid">
+        <figure class="project"><img src="assets/atap.jpeg" width="1600" height="1200" loading="lazy" alt="Kanopi rangka besi yang sedang dipasang"><figcaption>Kanopi galvalum<span>Pemasangan di lokasi</span></figcaption></figure>
+        <figure class="project"><img src="assets/pintu1.jpeg" width="297" height="632" loading="lazy" alt="Detail pintu besi geser"><figcaption>Pintu geser<span>Detail hasil pekerjaan</span></figcaption></figure>
+        <figure class="project"><img src="assets/tangga-putar.jpeg" width="1200" height="1600" loading="lazy" alt="Tangga putar besi di rumah pelanggan"><figcaption>Tangga putar<span>Rangka besi</span></figcaption></figure>
+        <figure class="project"><img src="assets/proses.jpeg" width="899" height="1599" loading="lazy" alt="Proses pengerjaan rangka besi di bengkel"><figcaption>Proses pengerjaan<span>Perakitan rangka</span></figcaption></figure>
+        <figure class="project"><img src="assets/hasil.jpeg" width="1080" height="978" loading="lazy" alt="Hasil pekerjaan pintu besi"><figcaption>Hasil pekerjaan<span>Pintu dan pagar</span></figcaption></figure>
+        <figure class="project"><img src="assets/kontainer.jpeg" width="899" height="1599" loading="lazy" alt="Container booth hasil pekerjaan Bonafide Jaya"><figcaption>Container booth<span>Pekerjaan custom</span></figcaption></figure>
+        <figure class="project project-video"><video controls playsinline preload="metadata" poster="assets/proses.jpeg" aria-label="Video proses pembuatan pintu lipat"><source src="assets/proses-pintu-lipat.mp4" type="video/mp4">Browser Anda tidak mendukung pemutaran video.</video><figcaption class="video-caption">Proses pembuatan pintu lipat<span>Video pengerjaan di bengkel</span></figcaption></figure>
+      </div>
+    </section>
+
+    <section class="process section" id="proses" aria-labelledby="process-title">
+      <div class="wrap process-layout">
+        <div><p class="eyebrow">CARA KERJA</p><h2 id="process-title">Dari kebutuhan menjadi hasil</h2></div>
+        <ol class="steps">
+          <li><div><h3>Ceritakan kebutuhan Anda</h3><p>Hubungi kami lewat WhatsApp atau telepon untuk konsultasi awal.</p></div></li>
+          <li><div><h3>Diskusikan ukuran dan desain</h3><p>Bahas jenis pekerjaan dan ukuran yang dibutuhkan bersama tim Bonafide Jaya.</p></div></li>
+          <li><div><h3>Dapatkan penawaran</h3><p>Harga menyesuaikan jenis serta ukuran pekerjaan. Setelah disepakati, pengerjaan dapat dibahas lebih lanjut.</p></div></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="price-band wrap" aria-labelledby="price-title">
+      <div><p class="eyebrow">KISARAN HARGA</p><h2 id="price-title">Harga mulai</h2><p class="price-value">Rp250.000 <small>/ m²</small></p><p class="price-note">Kisaran Rp250.000–Rp1.500.000/m², menyesuaikan jenis dan ukuran pekerjaan.</p></div>
+      <div class="service-area"><strong>Melayani Surakarta dan sekitarnya</strong><p>Solo Raya, Jawa Tengah</p></div>
+    </section>
+
+    <section class="contact section" id="kontak" aria-labelledby="contact-title">
+      <div class="wrap contact-layout">
+        <div><p class="eyebrow">HUBUNGI BONJA</p><h2 id="contact-title">Mulai dari konsultasi</h2><p class="contact-intro">Ceritakan kebutuhan pekerjaan Anda. Kami siap membantu membahas layanan dan penawaran.</p>
+          <div class="contact-meta"><div><h3>Jam operasional</h3><p>Senin–Sabtu<br>08.00–17.00</p></div><div><h3>Media sosial</h3><p class="social-links"><a href="https://www.instagram.com/bonafidejaya/" target="_blank" rel="noopener noreferrer">Instagram</a><a href="https://www.facebook.com/search/top?q=bonafide%20jaya" target="_blank" rel="noopener noreferrer">Facebook</a></p></div></div>
+        </div>
+        <div>
+          <div class="contact-cards">
+            <article class="contact-card"><h3>Kantor 1 · Komplang</h3><p>Jl. Kimangun Sarkoro No. 95<br>Surakarta</p></article>
+            <article class="contact-card"><h3>Kantor 2 · Sumber</h3><p>Jl. Kahuripan No. 4<br>Sumber, Surakarta</p></article>
+            <article class="contact-card"><h3>WhatsApp</h3><p><a href="https://wa.me/6285728133420" target="_blank" rel="noopener noreferrer">0857 2813 3420</a></p></article>
+            <article class="contact-card"><h3>Telepon / WhatsApp</h3><p><a href="tel:+6282137289001">0821 3728 9001</a></p></article>
+          </div>
+          <div class="contact-actions"><a class="button" href="https://wa.me/6285728133420?text=Halo%20Bonafide%20Jaya%2C%20saya%20ingin%20konsultasi" target="_blank" rel="noopener noreferrer">Chat untuk penawaran <span aria-hidden="true">→</span></a><a class="button button-secondary" href="tel:+6285728133420">Telepon kami</a></div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="wrap footer-inner"><p><strong>BONAFIDE JAYA</strong> · Bengkel las sejak 2005 · Surakarta</p><a href="#atas">Kembali ke atas ↑</a></div></footer>
+  <script>
+    const menuButton = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    menuButton.addEventListener('click', () => {
+      const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
+      menuButton.setAttribute('aria-expanded', String(!isOpen));
+      menuButton.setAttribute('aria-label', isOpen ? 'Buka navigasi' : 'Tutup navigasi');
+      navLinks.classList.toggle('is-open', !isOpen);
+    });
+    navLinks.addEventListener('click', (event) => {
+      if (event.target.closest('a')) {
+        navLinks.classList.remove('is-open');
+        menuButton.setAttribute('aria-expanded', 'false');
+        menuButton.setAttribute('aria-label', 'Buka navigasi');
+      }
+    });
+  </script>
+</body>
+</html>
